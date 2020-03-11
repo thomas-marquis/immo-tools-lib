@@ -1,0 +1,36 @@
+[tool.poetry]
+name = "repos"
+version = "0.1.0"
+description = ""
+authors = ["thomas.marquis.dev <thomas.marquis314@gmail.com>"]
+packages = [
+    {include = "immo_tools"}
+]
+repository = "https://test.pypi.org/immo-tools"
+
+[tool.poetry.dependencies]
+python = "^3.7"
+numpy = "^1.18.1"
+pandas = "^1.0.1"
+
+[tool.poetry.dev-dependencies]
+jupyter = "^1.0.0"
+pytest = "^5.3.5"
+coverage = {extras = ["toml"], version = "^5.0.3"}
+pytest-cov = "^2.8.1"
+nox = "^2019.11.9"
+
+[tool.coverage.paths]
+source = ['./', '*/site-packages']
+
+[tool.coverage.run]
+branch = true
+source = ['immo_tools']
+
+[tool.coverage.report]
+show_missing = true
+fail_under = 80
+
+[build-system]
+requires = ["poetry>=0.12"]
+build-backend = "poetry.masonry.api"
