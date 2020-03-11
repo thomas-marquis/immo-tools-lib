@@ -1,5 +1,7 @@
 # immo-tools
 
+## tests
+
 lancer les tests :
 
 ````shell script
@@ -22,12 +24,18 @@ Permet de lancer les tests sur plusieurs versions de python et de manière isoll
 Nox crée son propre environnement virtuel et y install les dépendances.
 L'option ``-r`` permet déviter de recréer tout l'environnement virtuel à chaque fois.
 
-## build
+## build & publish
 
-une seule commande :
+build :
 
 ````shell script
 poetry build
 ````
 
-pypi-AgEIcHlwaS5vcmcCJGQ2NmU2MjFlLWE5MmYtNGJlNi04OWZhLTk0ZGU4MzcxNTdmMwACJXsicGVybWlzc2lvbnMiOiAidXNlciIsICJ2ZXJzaW9uIjogMX0AAAYgB5rHYLVVP6pgg3gpWEjvq31ONfYvXD4YzA4WsNdrI1E
+
+publish sur pypi :
+
+````shell script
+poetry publish --build
+````
+
