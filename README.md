@@ -1,6 +1,51 @@
-# immo-tools
+# immo tools lib
 
-## tests
+## installation
+
+avec pip :
+````shell script
+pip install immo-tools-lib
+````
+
+avec poetry :
+````shell script
+poetry add immo-tools-lib
+````
+
+## usage
+
+````python
+from immo_tools import calculator
+
+duration = 300
+amount = 250000
+year_rate = 1.5
+insurance_rate = .26
+
+loan = calculator.build_loan(
+    duration, 
+    amount, 
+    year_rate, 
+    insurance_rate, 
+    build_summary=True, 
+    duration_unit='month')
+
+# Tableau d'amoritssement :
+loan.summary
+
+# montant total des intérêts payés :
+loan.get_interests()
+
+# mensualités sans assurance :
+loan.get_monthly()
+
+# Coût de l'emprunt au bout de 10 ans :
+loan.get_cost(10)
+````
+
+## développement
+
+### tests
 
 lancer les tests :
 
@@ -24,7 +69,7 @@ Permet de lancer les tests sur plusieurs versions de python et de manière isoll
 Nox crée son propre environnement virtuel et y install les dépendances.
 L'option ``-r`` permet déviter de recréer tout l'environnement virtuel à chaque fois.
 
-## build & publish
+### build & publish
 
 build :
 

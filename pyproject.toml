@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "immo-tools-lib"
-version = "0.1.1"
+version = "0.1.2"
 description = "calcul des couts de credit immobilier"
 license = "MIT"
 authors = ["thomas.marquis.dev <thomas.marquis314@gmail.com>"]
