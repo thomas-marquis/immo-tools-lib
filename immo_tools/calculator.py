@@ -12,16 +12,20 @@ class Calculator:
     def __init__(self):
         self.summary = None
 
-    def get_cost(self, sales_year=8):
+    def get_cost(self, sales_year=8, to_string=False):
         if self.summary is None:
             return None
-        return self.summary \
+        cost = self.summary \
                    .groupby(by=[YEAR_COL]) \
                    .sum() \
                    .iloc[:sales_year, :] \
                    .loc[:, [INTERSET_COL, INS_ALL_COL, REFUNDED_CAP_COL]] \
             .sum() \
             .round(2)
+        if to_string:
+            return cost.to_markdown()
+        else:
+            return cost
 
 
 def convert_rate_per_month(rate, n_per=12):
